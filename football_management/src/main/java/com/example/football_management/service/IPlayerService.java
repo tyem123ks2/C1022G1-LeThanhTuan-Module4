@@ -17,7 +17,6 @@ public interface IPlayerService {
 
     boolean editPlayer(Player player);
 
-    boolean deletePlayer(Player player);
 
     Player findById(Long id);
 }

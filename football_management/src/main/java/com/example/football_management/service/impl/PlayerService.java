@@ -27,22 +27,20 @@ public class PlayerService implements IPlayerService {
 
     @Override
     public List<Player> getAllPlayer() {
-        return null;
+
+        return playerRepository.findAll();
     }
 
     @Override
     public boolean getAddNewPlayer(Player player) {
-        return false;
+       playerRepository.save(player);
+        return true;
     }
 
     @Override
     public boolean editPlayer(Player player) {
-        return false;
-    }
-
-    @Override
-    public boolean deletePlayer(Player player) {
-        return false;
+        playerRepository.save(player);
+        return true;
     }
 
     @Override

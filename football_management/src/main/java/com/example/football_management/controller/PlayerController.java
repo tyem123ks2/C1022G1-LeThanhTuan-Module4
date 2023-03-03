@@ -27,10 +27,9 @@ public class PlayerController {
 
     @GetMapping(value = "/show-list")
     public String showList(Model model, @RequestParam(value = "searchName", defaultValue = "") String name,
-                           @RequestParam(value = "searchPosition", defaultValue = "") String position,
                            @PageableDefault(size = 5) Pageable pageable) {
-        Page<Player> playerList;
-        playerList = playerService.searchName(name, pageable);
+        List<Player> playerList;
+        playerList = playerService.getAllPlayer();
         List<Nation> nationList = nationService.getAllNation();
         model.addAttribute("playerList", playerList);
         model.addAttribute("nationList", nationList);
