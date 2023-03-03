@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3344ce3d-a492-43cc-a8c6-13a425eb001f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/.gradle/6.1/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/.gradle/6.1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/build/tmp/war/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/exercise/ProductManagement/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/build/classes/java/main/com/example/configuration/AppConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/build/classes/java/main/com/example/configuration/AppInitializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/build/classes/java/main/com/example/controller/CustomerController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/build/classes/java/main/com/example/model/Customer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/build/classes/java/main/com/example/service/CustomerService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/build/classes/java/main/com/example/service/ICustomerService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/build/libs/customer-1.0-SNAPSHOT.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/src/main/java/com/example/configuration/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/src/main/java/com/example/configuration/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/src/main/java/com/example/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/src/main/java/com/example/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/src/main/java/com/example/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/src/main/java/com/example/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_view_thymeleaf/practice/Customer/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="2LANLw41v3tYUR1LXoxnP9aom5R" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.69" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.69" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Gradle : org.example : Mailbox-1.0-SNAPSHOT.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Mailbox_2" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="57647" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : org.example : Mailbox-1.0-SNAPSHOT.war" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3344ce3d-a492-43cc-a8c6-13a425eb001f" name="Default Changelist" comment="" />
+      <created>1675309874872</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675309874872</updated>
+      <workItem from="1675309878213" duration="5115000" />
+      <workItem from="1675395090467" duration="771000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="63" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1675324802836">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="223" y="63" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.816@0.0.1536.816" timestamp="1675324802836" />
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1675310448683">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1675310448683" />
+    <state x="499" y="0" width="726" height="816" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1675324800348">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="499" y="0" width="726" height="816" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1536.816@0.0.1536.816" timestamp="1675324800348" />
+    <state x="643" y="150" key="FileChooserDialogImpl" timestamp="1675395239676">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="643" y="150" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1675395239676" />
+    <state width="1024" height="203" key="GridCell.Tab.1.bottom" timestamp="1675324328350">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1024" height="203" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1675324328350" />
+    <state width="1024" height="203" key="GridCell.Tab.1.center" timestamp="1675324328350">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1024" height="203" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1675324328350" />
+    <state width="1024" height="203" key="GridCell.Tab.1.left" timestamp="1675324328350">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1024" height="203" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1675324328350" />
+    <state width="1024" height="203" key="GridCell.Tab.1.right" timestamp="1675324328350">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1024" height="203" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1675324328350" />
+    <state width="1024" height="203" key="GridCell.Tab.2.bottom" timestamp="1675324328350">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1024" height="203" key="GridCell.Tab.2.bottom/0.0.1536.816@0.0.1536.816" timestamp="1675324328350" />
+    <state width="1024" height="203" key="GridCell.Tab.2.center" timestamp="1675324328350">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1024" height="203" key="GridCell.Tab.2.center/0.0.1536.816@0.0.1536.816" timestamp="1675324328350" />
+    <state width="1024" height="203" key="GridCell.Tab.2.left" timestamp="1675324328350">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1024" height="203" key="GridCell.Tab.2.left/0.0.1536.816@0.0.1536.816" timestamp="1675324328350" />
+    <state width="1024" height="203" key="GridCell.Tab.2.right" timestamp="1675324328350">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1024" height="203" key="GridCell.Tab.2.right/0.0.1536.816@0.0.1536.816" timestamp="1675324328350" />
+    <state x="209" y="0" key="new project wizard" timestamp="1675395252498">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="209" y="0" key="new project wizard/0.0.1536.816@0.0.1536.816" timestamp="1675395252498" />
+  </component>
+</project>
