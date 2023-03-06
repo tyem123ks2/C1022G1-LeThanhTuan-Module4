@@ -9,7 +9,8 @@ import java.util.List;
 public interface IPlayerService {
     Page<Player> searchName(String name, Pageable pageable);
 
-    Page<Player> searchName(String name, String position, Pageable pageable);
+    Page<Player> searchName(String name, int positionId, int nationId, Pageable pageable);
+
 
     List<Player> getAllPlayer();
 

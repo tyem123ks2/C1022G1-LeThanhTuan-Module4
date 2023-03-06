@@ -8,11 +8,13 @@ import javax.persistence.*;
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String name;
     private String dateOfBirth;
     private int age;
-    private String position;
+    @ManyToOne
+    @JoinColumn(name = "position_id", referencedColumnName = "id")
+    private Position position;
     private int experience;
     @ManyToOne
     @JoinColumn(name = "nation_id", referencedColumnName = "id")
@@ -23,11 +25,11 @@ public class Player {
     public Player() {
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -55,11 +57,11 @@ public class Player {
         this.age = age;
     }
 
-    public String getPosition() {
+    public Position getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(Position position) {
         this.position = position;
     }
 

@@ -4,17 +4,15 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Nation {
+public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String country;
-    @OneToMany(mappedBy = "nation")
+    private String positionType;
+    @OneToMany(mappedBy = "position")
     Set<Player> playerSet;
-    @Column(columnDefinition = "boolean default false")
-    private boolean isDeleted;
 
-    public Nation() {
+    public Position() {
     }
 
     public int getId() {
@@ -25,12 +23,12 @@ public class Nation {
         this.id = id;
     }
 
-    public String getCountry() {
-        return country;
+    public String getPositionType() {
+        return positionType;
     }
 
-    public void setCountry(String nationality) {
-        this.country = nationality;
+    public void setPositionType(String positionType) {
+        this.positionType = positionType;
     }
 
     public Set<Player> getPlayerSet() {
@@ -39,13 +37,5 @@ public class Nation {
 
     public void setPlayerSet(Set<Player> playerSet) {
         this.playerSet = playerSet;
-    }
-
-    public boolean isDeleted() {
-        return isDeleted;
-    }
-
-    public void setDeleted(boolean deleted) {
-        isDeleted = deleted;
     }
 }

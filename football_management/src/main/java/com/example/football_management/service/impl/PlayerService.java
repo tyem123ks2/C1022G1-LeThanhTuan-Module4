@@ -17,24 +17,25 @@ public class PlayerService implements IPlayerService {
 
     @Override
     public Page<Player> searchName(String name, Pageable pageable) {
-        return null;
+        return playerRepository.searchName(name,pageable);
     }
 
     @Override
-    public Page<Player> searchName(String name, String position, Pageable pageable) {
-        return null;
+    public Page<Player> searchName(String name, int positionId, int nationId, Pageable pageable) {
+        return playerRepository.searchName(name, positionId, nationId, pageable);
     }
+
+
 
     @Override
     public List<Player> getAllPlayer() {
-
         return playerRepository.findAll();
     }
 
     @Override
     public boolean getAddNewPlayer(Player player) {
        playerRepository.save(player);
-        return true;
+       return true;
     }
 
     @Override
