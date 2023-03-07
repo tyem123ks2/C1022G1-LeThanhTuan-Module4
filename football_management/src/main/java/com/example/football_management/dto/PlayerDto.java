@@ -18,8 +18,6 @@ public class PlayerDto implements Validator {
             message = "The name cannot contain numbers and special characters")
     private String name;
     private String dateOfBirth;
-    @NotBlank(message = "Age cannot be left blank")
-    @Pattern(regexp = "(\\d{2})", message = "Age>18")
     private int age;
     private int experience;
     private Position position;

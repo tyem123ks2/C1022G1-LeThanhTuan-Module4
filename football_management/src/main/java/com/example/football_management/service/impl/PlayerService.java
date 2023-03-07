@@ -45,6 +45,11 @@ public class PlayerService implements IPlayerService {
     }
 
     @Override
+    public void remove(int id) {
+        playerRepository.deleteById(id);
+    }
+
+    @Override
     public Player findById(Long id) {
         return null;
     }

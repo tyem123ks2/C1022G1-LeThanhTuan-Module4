@@ -53,21 +53,20 @@ public class PlayerController {
         model.addAttribute("positionList", positionList);
         return "/player/list";
     }
+
     @PostMapping(value = "/add")
     public String addNewCustomer(@Validated PlayerDto playerDto, BindingResult bindingResult, Model model,
                                  RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             Pageable pageable = null;
-            Page<Player> customerList = playerService.searchName("", pageable);
+            Page<Player> playerList = playerService.searchName("", pageable);
             List<Nation> nationList = nationService.getAllNation();
             List<Position> positionList = positionService.getAllPosition();
-            boolean isModal = true;
-            model.addAttribute("isModal", isModal);
             model.addAttribute("PlayerDto", playerDto);
-            model.addAttribute("customerList", customerList);
+            model.addAttribute("playerList", playerList);
             model.addAttribute("nationList", nationList);
             model.addAttribute("positionList", positionList);
-            model.addAttribute("hasErr","true");
+            model.addAttribute("hasErr", "true");
             return "/player/list";
         } else {
             Player player = new Player();
@@ -82,8 +81,41 @@ public class PlayerController {
             redirectAttributes.addFlashAttribute("mess", mess);
             return "redirect:/player/show-list";
         }
-
     }
 
+    @PostMapping(value = "/edit")
+    public String editCustomer(@Validated PlayerDto playerDto, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasErrors()) {
+            Pageable pageable = null;
+            Page<Player> playerList = playerService.searchName("", pageable);
+            List<Nation> nationList = nationService.getAllNation();
+            List<Position> positionList = positionService.getAllPosition();
+            model.addAttribute("PlayerDto", playerDto);
+            model.addAttribute("playerList", playerList);
+            model.addAttribute("nationList", nationList);
+            model.addAttribute("positionList", positionList);
+            model.addAttribute("hasErr", "true");
+            return "/player/list";
+        } else {
+            Player player = new Player();
+            BeanUtils.copyProperties(playerDto, player);
+            boolean check = playerService.getAddNewPlayer(player);
+            String mess;
+            if (check) {
+                mess = "Thêm mới thành công";
+            } else {
+                mess = "Đã xảy ra lỗi";
+            }
+            redirectAttributes.addFlashAttribute("mess", mess);
+            return "redirect:/player/show-list";
+        }
+    }
+
+    @PostMapping(value = "/delete")
+    public String deleteCustomer(@RequestParam int id, PlayerDto playerDto, Model model, RedirectAttributes redirectAttributes) {
+        playerService.remove(id);
+        redirectAttributes.addFlashAttribute("mess", "Xóa thành công");
+        return "redirect:/player/show-list";
+    }
 
 }

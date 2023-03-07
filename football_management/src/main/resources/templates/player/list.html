@@ -48,7 +48,8 @@
                 </form>
             </div>
             <div class="col-lg-4">
-                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addPlayer">
+                <button type="button" class="btn btn-light" data-bs-toggle="modal"
+                        data-bs-target="#addPlayer">
                     <img src="https://img.icons8.com/offices/30/null/plus-2-math.png"/> ADD NEW PLAYER
                 </button>
             </div>
@@ -116,14 +117,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Add service information</h5>
-                <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title">Add Player Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form th:action="@{/player/add}" th:object="${playerDto}" method="post">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label class="form-label">Name</label>
-                        <input type="text" pattern="^([\p{Lu}][\p{Ll}]{1,8})(\s([\p{Lu}]|[\p{Lu}][\p{Ll}]{1,10})){0,5}$" th:field="*{name}" class="form-control" name="name">
+                        <input type="text" th:field="*{name}" class="form-control" name="name">
                         <div class="text text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
                             <p>Incorrect name</p>
                         </div>
@@ -133,7 +134,8 @@
                         <input type="date" th:field="*{dateOfBirth}"
                                class="form-control"
                                name="dateOfBirth" required>
-                        <div class="text text-danger" th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}">
+                        <div class="text text-danger" th:if="${#fields.hasErrors('dateOfBirth')}"
+                             th:errors="*{dateOfBirth}">
                             <p>Incorrect date of birth</p>
                         </div>
                     </div>
@@ -155,15 +157,16 @@
                     <div class="mb-3">
                         <label class="form-label">Experience</label>
                         <input type="text" th:field="*{experience}" class="form-control" name="expenrience">
-                        <div class="text text-danger" th:if="${#fields.hasErrors('experience')}" th:errors="*{experience}">
-                            <p>Incorrect Expenrience</p>
+                        <div class="text text-danger" th:if="${#fields.hasErrors('experience')}"
+                             th:errors="*{experience}">
+                            <p>Incorrect experience</p>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Position</label>
+                        <label class="form-label">Country</label>
                         <select th:field="*{nation}" class="form-select"
                                 aria-label="Example select with button addon">
-                            <option th:each="nation: ${nationList}" th:value="${nation.id}"
+                            <option th:each="nation : ${nationList}" th:value="${nation.id}"
                                     th:text="${nation.country}"></option>
                         </select>
                     </div>
@@ -178,230 +181,118 @@
     </div>
 </div>
 
-<!--&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;edit modal&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
-<!--<div class="modal fade" id="editService" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--    <div class="modal-dialog">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <h5 class="modal-title">Edit service information</h5>-->
-<!--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--            </div>-->
-<!--            <form th:action="@{/facility/edit-facility}" th:object="${facility}" method="post">-->
-<!--                <div class="modal-body">-->
-<!--                    <input type="text" th:field="*{id}" id="editId" name="editId" hidden>-->
-<!--                    <input type="text" th:field="*{facilityType}" id="editFacilityType" name="editFacilityType" hidden>-->
-<!--                    <div class="mb-3">-->
-<!--                        <label class="form-label">New name</label>-->
-<!--                        <input type="text" th:field="*{name}" class="form-control" id="newName" name="newName">-->
-<!--                        <div class="text text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">-->
-<!--                            <p>Incorrect name</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="mb-3">-->
-<!--                        <label class="form-label">New area</label>-->
-<!--                        <input type="text" th:field="*{area}" class="form-control" id="newArea" name="newArea">-->
-<!--                        <div class="text text-danger" th:if="${#fields.hasErrors('area')}" th:errors="*{area}">-->
-<!--                            <p>Incorrect name</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="mb-3">-->
-<!--                        <label class="form-label">New cost</label>-->
-<!--                        <input type="text" th:field="*{cost}" class="form-control" id="newCost" name="newCost">-->
-<!--                        <div class="text text-danger" th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}">-->
-<!--                            <p>Incorrect name</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="mb-3">-->
-<!--                        <label class="form-label">New max people</label>-->
-<!--                        <input type="text" th:field="*{maxPeople}" class="form-control" id="newMaxPeople"-->
-<!--                               name="newMaxPeople">-->
-<!--                        <div class="text text-danger" th:if="${#fields.hasErrors('maxPeople')}"-->
-<!--                             th:errors="*{maxPeople}">-->
-<!--                            <p>Incorrect name</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="mb-3">-->
-<!--                        <label class="form-label">New rent type</label>-->
-<!--                        <select th:field="*{rentType}" id="newRentType" class="form-select"-->
-<!--                                aria-label="Example select with button addon">-->
-<!--                            <option th:each="rentType: ${rentTypeList}" th:value="${rentType.id}"-->
-<!--                                    th:text="${rentType.name}"></option>-->
-<!--                        </select>-->
-<!--                    </div>-->
-<!--                    <div class="mb-3" id="editStandardRoom">-->
-<!--                        <label class="form-label">New standard room</label>-->
-<!--                        <input type="text" th:field="*{standardRoom}" class="form-control" id="newStandardRoom"-->
-<!--                               name="newStandardRoom">-->
-<!--                        <div class="text text-danger" th:if="${#fields.hasErrors('standardRoom')}"-->
-<!--                             th:errors="*{standardRoom}">-->
-<!--                            <p>Incorrect name</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="mb-3" id="editDescriptionOtherConvenience">-->
-<!--                        <label class="form-label">New description other convenience</label>-->
-<!--                        <input type="text" th:field="*{descriptionOtherConvenience}" class="form-control"-->
-<!--                               id="newDescriptionOtherConvenience" name="newDescriptionOtherConvenience">-->
-<!--                        <div class="text text-danger" th:if="${#fields.hasErrors('descriptionOtherConvenience')}"-->
-<!--                             th:errors="*{descriptionOtherConvenience}">-->
-<!--                            <p>Incorrect name</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="mb-3" id="editPoolArea">-->
-<!--                        <label class="form-label">New pool area</label>-->
-<!--                        <input type="text" th:field="*{poolArea}" class="form-control" id="newPoolArea"-->
-<!--                               name="newPoolArea">-->
-<!--                        <div class="text text-danger" th:if="${#fields.hasErrors('poolArea')}" th:errors="*{poolArea}">-->
-<!--                            <p>Incorrect name</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="mb-3" id="editNumberOfFloors">-->
-<!--                        <label class="form-label">New number of floors</label>-->
-<!--                        <input type="text" th:field="*{numberOfFloor}" class="form-control" id="newNumberOfFloors"-->
-<!--                               name="newNumberOfFloors">-->
-<!--                        <div class="text text-danger" th:if="${#fields.hasErrors('numberOfFloor')}"-->
-<!--                             th:errors="*{numberOfFloor}">-->
-<!--                            <p>Incorrect name</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="mb-3" id="editFacilityFree">-->
-<!--                        <label class="form-label">New facility free</label>-->
-<!--                        <input type="text" th:field="*{facilityFree}" class="form-control" id="newFacilityFree"-->
-<!--                               name="newFacilityFree">-->
-<!--                        <div class="text text-danger" th:if="${#fields.hasErrors('facilityFree')}"-->
-<!--                             th:errors="*{facilityFree}">-->
-<!--                            <p>Incorrect name</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="modal-footer">-->
-<!--                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-<!--                    <button type="submit" class="btn btn-danger">Submit</button>-->
-<!--                </div>-->
-<!--            </form>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;delete modal-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
-<!--<div class="modal fade" id="deleteService" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--    <div class="modal-dialog">-->
-<!--        <div class="modal-content">-->
-<!--            <form method="post" th:object="${facility}" th:action="@{/facility/delete-facility}">-->
-<!--                <div class="modal-header">-->
-<!--                    <h5 class="modal-title" id="exampleModalLabel">Delete service information</h5>-->
-<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--                </div>-->
-<!--                <div class="modal-body">-->
-<!--                    <input type="text" th:field="*{id}" name="deleteId" id="deleteId" hidden>-->
-<!--                    <span>Are you sure that you want to delete information of </span>-->
-<!--                    <span> id="deleteName"> ?</span>-->
-<!--                </div>-->
-<!--                <div class="modal-footer">-->
-<!--                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-<!--                    <button type="submit" class="btn btn-danger">Delete</button>-->
-<!--                </div>-->
-<!--            </form>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+<!-----------------------------------------------------------------edit modal---------------------------------------------------------------------->
+<div class="modal fade" id="editPlayer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Player information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form th:action="@{/player/edit}" th:object="${playerDto}" method="post">
+                <div class="modal-body">
+                    <input type="text" th:field="*{id}" id="editId" name="editId" hidden>
+                    <div class="mb-3">
+                        <label class="form-label">New name</label>
+                        <input type="text" th:field="*{name}" class="form-control" id="newName" name="newName">
+                        <div class="text text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
+                            <p>Incorrect name</p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">New birthday</label>
+                        <input type="date" class="form-control" th:field="*{dateOfBirth}" name="newBirthday" id="newBirthday">
+                        <div class="text text-danger" th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}">
+                            <p>Incorrect date of birth</p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">New age</label>
+                        <input type="text" th:field="*{age}" class="form-control" id="newAge" name="newAge">
+                        <div class="text text-danger" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">
+                            <p>Incorrect age</p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">New Position</label>
+                        <select class="form-select" th:field="*{position}"
+                                aria-label="Example select with button addon" name="newPosition" id="newPosition">
+                            <option th:each="position: ${positionList}" th:value="${position.id}"
+                                    th:text="${position.positionType}"></option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">New Experience</label>
+                        <input type="text" th:field="*{experience}" class="form-control" id="newExperience"
+                               name="newExperience">
+                        <div class="text text-danger" th:if="${#fields.hasErrors('experience')}"
+                             th:errors="*{experience}">
+                            <p>Incorrect name</p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">New Country</label>
+                        <select class="form-select" th:field="*{nation}"
+                                aria-label="Example select with button addon" name="newCountry" id="newCountry">
+                            <option th:each="nation : ${nationList}" th:value="${nation.id}"
+                                    th:text="${nation.country}"></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!---------------------------------------------------------------delete modal----------------------------------------------------------------------------->
+<div class="modal fade" id="deletePlayer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Player Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            <form method="post" th:object="${playerDto}" th:action="@{/player/delete}">
+                <div class="modal-body">
+                    <label for="deleteId"></label><input type="text" hidden id="deleteId" name="id">
+                    Bạn có muốn xóa cầu thủ <span id="deleteName" style="color: brown; font-weight: bold"></span>
+                    không ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <script>
-    function getPlayerId(id, name) {
+
+    function getPLayerId(id, name) {
         document.getElementById("deleteId").value = id;
         document.getElementById("deleteName").innerText = name;
     }
-</script>
-
-<!--    function showVillaAddForm() {-->
-<!--        document.getElementById("facilityTypeId").value = 1;-->
-<!--        var facilityFree = document.getElementById("facilityFree");-->
-<!--        var standardRoom = document.getElementById("standardRoom");-->
-<!--        var descriptionOtherConvenience = document.getElementById("descriptionOtherConvenience");-->
-<!--        var poolArea = document.getElementById("poolArea");-->
-<!--        var numberOfFloors = document.getElementById("numberOfFloors");-->
-<!--        facilityFree.style.display = "none";-->
-<!--        standardRoom.style.display = "block";-->
-<!--        descriptionOtherConvenience.style.display = "block";-->
-<!--        poolArea.style.display = "block";-->
-<!--        numberOfFloors.style.display = "block";-->
-<!--    }-->
-
-<!--    function showHouseAddForm() {-->
-<!--        document.getElementById("facilityTypeId").value = 2;-->
-<!--        var facilityFree = document.getElementById("facilityFree");-->
-<!--        var standardRoom = document.getElementById("standardRoom");-->
-<!--        var descriptionOtherConvenience = document.getElementById("descriptionOtherConvenience");-->
-<!--        var poolArea = document.getElementById("poolArea");-->
-<!--        var numberOfFloors = document.getElementById("numberOfFloors");-->
-<!--        facilityFree.style.display = "none";-->
-<!--        standardRoom.style.display = "block";-->
-<!--        descriptionOtherConvenience.style.display = "block";-->
-<!--        poolArea.style.display = "none";-->
-<!--        numberOfFloors.style.display = "block";-->
-<!--    }-->
-
-<!--    function showRoomAddForm() {-->
-<!--        document.getElementById("facilityTypeId").value = 3;-->
-<!--        var poolArea = document.getElementById("poolArea");-->
-<!--        var standardRoom = document.getElementById("standardRoom");-->
-<!--        var descriptionOtherConvenience = document.getElementById("descriptionOtherConvenience");-->
-<!--        var numberOfFloors = document.getElementById("numberOfFloors");-->
-<!--        var facilityFree = document.getElementById("facilityFree");-->
-<!--        poolArea.style.display = "none";-->
-<!--        standardRoom.style.display = "none";-->
-<!--        descriptionOtherConvenience.style.display = "none";-->
-<!--        numberOfFloors.style.display = "none";-->
-<!--        facilityFree.style.display = "block";-->
-<!--    }-->
-
-<!--    function getFacilityInfo(id, rentType, facilityType, name, area, cost, maxPeople, standardRoom, descriptionOtherConvenience, poolArea, numberOfFloors, facilityFree) {-->
-<!--        document.getElementById("editId").value = id;-->
-<!--        document.getElementById("editFacilityType").value = facilityType;-->
-<!--        document.getElementById("newName").value = name;-->
-<!--        document.getElementById("newArea").value = area;-->
-<!--        document.getElementById("newCost").value = cost;-->
-<!--        document.getElementById("newMaxPeople").value = maxPeople;-->
-<!--        document.getElementById("newStandardRoom").value = standardRoom;-->
-<!--        document.getElementById("newDescriptionOtherConvenience").value = descriptionOtherConvenience;-->
-<!--        document.getElementById("newPoolArea").value = poolArea;-->
-<!--        document.getElementById("newNumberOfFloors").value = numberOfFloors;-->
-<!--        document.getElementById("newFacilityFree").value = facilityFree;-->
-<!--        document.getElementById("newRentType").value = rentType;-->
-<!--        var editPoolArea = document.getElementById("editPoolArea");-->
-<!--        var editStandardRoom = document.getElementById("editStandardRoom");-->
-<!--        var editDescriptionOtherConvenience = document.getElementById("editDescriptionOtherConvenience");-->
-<!--        var editNumberOfFloors = document.getElementById("editNumberOfFloors");-->
-<!--        var editFacilityFree = document.getElementById("editFacilityFree");-->
-<!--        debugger-->
-<!--        if (facilityType == 1) {-->
-<!--            editPoolArea.style.display = "block";-->
-<!--            editStandardRoom.style.display = "block";-->
-<!--            editDescriptionOtherConvenience.style.display = "block";-->
-<!--            editNumberOfFloors.style.display = "block";-->
-<!--            editFacilityFree.style.display = "none";-->
-
-<!--        } else if (facilityType == 2) {-->
-<!--            editPoolArea.style.display = "none";-->
-<!--            editStandardRoom.style.display = "block";-->
-<!--            editDescriptionOtherConvenience.style.display = "block";-->
-<!--            editNumberOfFloors.style.display = "block";-->
-<!--            editFacilityFree.style.display = "none";-->
-<!--        } else {-->
-<!--            editPoolArea.style.display = "none";-->
-<!--            editStandardRoom.style.display = "none";-->
-<!--            editDescriptionOtherConvenience.style.display = "none";-->
-<!--            editNumberOfFloors.style.display = "none";-->
-<!--            editFacilityFree.style.display = "block";-->
-<!--        }-->
-<!--    }-->
-<script>
+    function getEmployeeInfo(id, name, dateOfBirth, age, position, experience, country) {
+        document.getElementById("editId").value = id
+        document.getElementById("newName").value = name;
+        document.getElementById("newBirthday").value = dateOfBirth;
+        document.getElementById("newAge").value = age;
+        document.getElementById("newPosition").value = position;
+        document.getElementById("newExperience").value = experience;
+        document.getElementById("newCountry").value = country;
+    }
     function onCloseModal() {
         document.getElementById('addPlayer').style.display = 'none';
-        // document.getElementById('exampleModalUpdate').style.display = 'none';
+        document.getElementById('exampleModalUpdate').style.display = 'none';
         window.location.href = "/player";
     }
 </script>
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"-->
-<!--        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"-->
-<!--        crossorigin="anonymous"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
