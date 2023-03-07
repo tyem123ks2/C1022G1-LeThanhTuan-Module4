@@ -94,7 +94,6 @@ public class PlayerController {
             model.addAttribute("playerList", playerList);
             model.addAttribute("nationList", nationList);
             model.addAttribute("positionList", positionList);
-            model.addAttribute("hasErr", "true");
             return "/player/list";
         } else {
             Player player = new Player();

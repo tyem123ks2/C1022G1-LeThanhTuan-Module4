@@ -5,6 +5,8 @@ import com.example.football_management.model.Position;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
@@ -18,7 +20,12 @@ public class PlayerDto implements Validator {
             message = "The name cannot contain numbers and special characters")
     private String name;
     private String dateOfBirth;
+    @NotBlank(message = "Age  cannot be left blank")
+    @Min(value = 16, message = "Age > 16")
+    @Max(value = 100, message = "Age < 100")
     private int age;
+    @NotBlank(message = "Experience cannot be left blank")
+    @Pattern(regexp = "^[1-9]\\d*$", message = "EXP must be a positive integer")
     private int experience;
     private Position position;
     private Nation nation;
