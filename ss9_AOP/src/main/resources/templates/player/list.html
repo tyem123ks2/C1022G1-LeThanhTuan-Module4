@@ -1,0 +1,55 @@
+!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p th:text="${mess}"></p>
+
+<h3>Player List</h3>
+
+<p>Có <span th:text="${playerList.size()}"></span>MEN PLAYER</p>
+
+<table class="table table-striped">
+    <thead class="table align-middle table-secondary" align="center">
+    <tr>
+        <th scope="col">STT</th>
+        <th scope="col">Name</th>
+        <th scope="col">Date Of Birth</th>
+        <th scope="col">Age</th>
+        <th scope="col">Position</th>
+        <th scope="col">Experience</th>
+        <th scope="col">Country</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="player,stt : ${playerList.content}">
+        <th align="center" scope="row" th:text="${stt.count + playerList.number*playerList.size}"></th>
+        <td th:text="${player.name}"></td>
+        <td th:text="${player.dateOfBirth}"></td>
+        <td th:text="${player.age}"></td>
+        <td th:text="${player.position.positionType}"></td>
+        <td th:text="${player.experience}"></td>
+        <td th:text="${player.nation.country}"></td>
+        <td th:text="${player.status}">
+            <span th:case="true">Đã đăng kí</span>
+            <span th:case="false">Dự bị</span>
+        </td>
+        <td><a th:href="@{/player/edit/__${player.id}__}">Edit</a></td>
+        <td>
+            <button type="button" th:attr="onclick=|getPlayerId('${player.id}','${player.name}')|"
+                    class="btn btn-light" data-bs-toggle="modal"
+                    data-bs-target="#deletePlayer">
+                <img src="https://img.icons8.com/ios-glyphs/30/null/trash--v1.png"/>
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

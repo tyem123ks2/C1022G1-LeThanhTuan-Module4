@@ -16,10 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -40,7 +37,7 @@ public class PlayerController {
     public String showList(Model model, @RequestParam(value = "searchName", defaultValue = "", required = false) String name,
                            @RequestParam(value = "searchPositionId", defaultValue = "0") int positionId,
                            @RequestParam(value = "searchNationId", defaultValue = "0") int nationId,
-                           @PageableDefault(size = 3) Pageable pageable) {
+                           @PageableDefault(size = 10) Pageable pageable) {
         Page<Player> playerList;
         playerList = playerService.searchName(name, positionId, nationId, pageable);
         PlayerDto playerDto = new PlayerDto();
@@ -55,7 +52,7 @@ public class PlayerController {
     }
 
     @PostMapping(value = "/add")
-    public String addNewCustomer(@Validated PlayerDto playerDto, BindingResult bindingResult, Model model,
+    public String addNewPlayer(@Validated PlayerDto playerDto, BindingResult bindingResult, Model model,
                                  RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             Pageable pageable = null;
@@ -84,7 +81,8 @@ public class PlayerController {
     }
 
     @PostMapping(value = "/edit")
-    public String editCustomer(@Validated PlayerDto playerDto, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes) {
+    public String editPlayer(@Validated PlayerDto playerDto, BindingResult bindingResult,
+                             Model model, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             Pageable pageable = null;
             Page<Player> playerList = playerService.searchName("", pageable);
@@ -98,16 +96,32 @@ public class PlayerController {
         } else {
             Player player = new Player();
             BeanUtils.copyProperties(playerDto, player);
-            boolean check = playerService.getAddNewPlayer(player);
+            boolean check = playerService.getEditPlayer(player);
             String mess;
             if (check) {
-                mess = "Thêm mới thành công";
+                mess = "Chỉnh sửa thành công!";
             } else {
-                mess = "Đã xảy ra lỗi";
+                mess = "Đã xảy ra lỗi!";
             }
             redirectAttributes.addFlashAttribute("mess", mess);
             return "redirect:/player/show-list";
         }
+    }
+
+    @PostMapping("/update")
+    public String update(@ModelAttribute @Validated PlayerDto playerDto, BindingResult bindingResult,
+                         RedirectAttributes redirectAttributes, Model model) {
+        new PlayerDto().validate(playerDto, bindingResult);
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("playerDto",playerDto);
+            model.addAttribute("nationList", nationService.getAllNation());
+            return "/player/list";
+        }
+        Player player = new Player();
+        BeanUtils.copyProperties(playerDto, player);
+        playerService.getAddNewPlayer(player);
+        redirectAttributes.addFlashAttribute("mess", "Chinh sua thanh cong.");
+        return "redirect:/player/show-list";
     }
 
     @PostMapping(value = "/delete")

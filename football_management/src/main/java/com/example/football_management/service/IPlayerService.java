@@ -16,7 +16,7 @@ public interface IPlayerService {
 
     boolean getAddNewPlayer(Player player);
 
-    boolean editPlayer(Player player);
+    boolean getEditPlayer(Player player);
 
     void remove(int id);
 

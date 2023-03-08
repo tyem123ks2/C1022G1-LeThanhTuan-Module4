@@ -39,7 +39,7 @@ public class PlayerService implements IPlayerService {
     }
 
     @Override
-    public boolean editPlayer(Player player) {
+    public boolean getEditPlayer(Player player) {
         playerRepository.save(player);
         return true;
     }

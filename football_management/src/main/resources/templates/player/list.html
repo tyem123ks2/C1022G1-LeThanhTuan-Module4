@@ -81,11 +81,15 @@
                     <td th:text="${player.position.positionType}"></td>
                     <td th:text="${player.experience}"></td>
                     <td th:text="${player.nation.country}"></td>
+<!--                    <td th:text="${player.status}">-->
+<!--                        <span th:case="true">Đã đăng kí</span>-->
+<!--                        <span th:case="false">Dự bị</span>-->
+<!--                    </td>-->
                     <td>
                         <button type="button"
                                 th:attr="onclick=|getPlayerInfo('${player.name}','${player.dateOfBirth}','${player.age}',
                                 '${player.position.positionType}','${player.experience}','${player.nation.country}')|"
-                                class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editService">
+                                class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editPlayer">
                             <img src="https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/null/external-create-social-media-interface-anggara-basic-outline-anggara-putra.png"/>
                         </button>
                     </td>
@@ -191,24 +195,24 @@
             </div>
             <form th:action="@{/player/edit}" th:object="${playerDto}" method="post">
                 <div class="modal-body">
-                    <input type="text" th:field="*{id}" id="editId" name="Id" hidden>
+                    <input type="text" id="id" th:field="*{id}" name="id" hidden>
                     <div class="mb-3">
                         <label class="form-label">New name</label>
-                        <input type="text" th:field="*{name}" class="form-control" id="newName" name="name">
+                        <input type="text" th:field="*{name}" class="form-control" id="newName" name="newName">
                         <div class="text text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
                             <p>Incorrect name</p>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">New birthday</label>
-                        <input type="date" class="form-control" th:field="*{dateOfBirth}" name="birthday" id="newBirthday">
+                        <input type="date" class="form-control" th:field="*{dateOfBirth}" name="newBirthday" id="newBirthday">
                         <div class="text text-danger" th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}">
                             <p>Incorrect date of birth</p>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">New age</label>
-                        <input type="text" th:field="*{age}" class="form-control" id="newAge" name="age">
+                        <input type="text" th:field="*{age}" class="form-control" id="newAge" name="newAge">
                         <div class="text text-danger" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">
                             <p>Incorrect age</p>
                         </div>
@@ -216,7 +220,7 @@
                     <div class="mb-3">
                         <label class="form-label">New Position</label>
                         <select class="form-select" th:field="*{position}"
-                                aria-label="Example select with button addon" name="position" id="newPosition">
+                                aria-label="Example select with button addon" name="newPosition" id="newPosition">
                             <option th:each="position: ${positionList}" th:value="${position.id}"
                                     th:text="${position.positionType}"></option>
                         </select>
@@ -224,7 +228,7 @@
                     <div class="mb-3">
                         <label class="form-label">New Experience</label>
                         <input type="text" th:field="*{experience}" class="form-control" id="newExperience"
-                               name="experience">
+                               name="newExperience">
                         <div class="text text-danger" th:if="${#fields.hasErrors('experience')}"
                              th:errors="*{experience}">
                             <p>Incorrect name</p>
@@ -233,7 +237,7 @@
                     <div class="mb-3">
                         <label class="form-label">New Country</label>
                         <select class="form-select" th:field="*{nation}"
-                                aria-label="Example select with button addon" name="natiom" id="newCountry">
+                                aria-label="Example select with button addon" name="newCountry" id="newCountry">
                             <option th:each="nation : ${nationList}" th:value="${nation.id}"
                                     th:text="${nation.country}"></option>
                         </select>
@@ -277,7 +281,7 @@
         document.getElementById("deleteName").innerText = name;
     }
     function getPlayerInfo(id, name, dateOfBirth, age, positionId, experience, nationId) {
-        document.getElementById("editId").value = id
+        document.getElementById("id").value = id;
         document.getElementById("newName").value = name;
         document.getElementById("newBirthday").value = dateOfBirth;
         document.getElementById("newAge").value = age;

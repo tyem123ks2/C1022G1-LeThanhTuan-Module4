@@ -1,7 +1,5 @@
 package com.example.football_management.model;
 
-import org.springframework.stereotype.Controller;
-
 import javax.persistence.*;
 
 @Entity

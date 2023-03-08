@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Edit player</h3>
+
+<a th:href="@{/player/show-list}">Back to player list</a>
+
+<form th:action="@{/player/update}" method="post" th:object="${playerDto}">
+    <table>
+        <tr>
+            <td><input type="hidden" th:field="*{id}"/></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>Birthday</td>
+            <td><input type="date" th:field="*{dateOfBirth}"></td>
+        </tr>
+
+        <tr>
+            <td>Position</td>
+            <div class="mb-3">
+                <label class="form-label">Position</label>
+                <select th:field="*{position}" class="form-select"
+                        aria-label="Example select with button addon">
+                    <option th:each="position: ${positionList}" th:value="${position.id}"
+                            th:text="${position.positionType}"></option>
+                </select>
+            </div>
+        </tr>
+
+        <tr>
+            <td>Experience</td>
+            <td><input type="text" th:field="*{experience}"></td>
+        </tr>
+        <tr>
+            <div class="mb-3">
+            <label class="form-label">Country</label>
+            <select th:field="*{nation}" class="form-select"
+                    aria-label="Example select with button addon">
+                <option th:each="nation : ${nationList}" th:value="${nation.id}"
+                        th:text="${nation.country}"></option>
+            </select>
+            </div>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td><input type="text" th:field="*{status}"></td>
+        </tr>
+    </table>
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>
