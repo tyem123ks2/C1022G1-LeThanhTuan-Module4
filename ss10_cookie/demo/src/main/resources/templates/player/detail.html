@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Detail Player Football</h3>
+
+<a th:href="@{/}">Back to players</a>
+
+<hr>
+
+<table th:object="${player}" border="1">
+    <tr>
+        <td>Id:</td>
+        <td th:text="${player.id}"></td>
+    </tr>
+
+    <tr>
+        <td>Name:</td>
+        <td th:text="${player.name}"></td>
+    </tr>
+
+    <tr>
+        <td>Age:</td>
+        <td th:text="${player.age}"></td>
+    </tr>
+
+    <tr>
+        <td>Position:</td>
+        <td th:text="${player.position}"></td>
+    </tr>
+
+    <tr>
+        <td>Experience:</td>
+        <td th:text="${player.experience}"></td>
+    </tr>
+</table>
+</body>
+</html>

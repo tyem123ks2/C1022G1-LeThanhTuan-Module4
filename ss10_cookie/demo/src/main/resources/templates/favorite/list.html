@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Favorite Player List</h3>
+
+<table border="1"th:if="${favorite !=null && favorite.getPlayerMap().size()>0}">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Age</th>
+        <th>Position</th>
+        <th>Experience</th>
+        <th>Status</th>
+    </tr>
+
+    <tr th:each="playerMap, status : ${favorite.playerMap}">
+        <td th:text="${status.count}"></td>
+        <td th:text="${playerMap.key.name}"></td>
+        <td><img th:src="@{${playerMap.key.image}}" style="width:70px; height: auto"></td>
+        <td th:text="${playerMap.key.age}"></td>
+        <td th:text="${playerMap.key.position}"></td>
+        <td th:text="${playerMap.key.experience}"></td>
+        <td th:text="${playerMap.value}"></td>
+    </tr>
+</table>
+</body>
+</html>
