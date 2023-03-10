@@ -22,7 +22,7 @@ public class PlayerRestController {
         if (playerList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(playerList,HttpStatus.OK);
+            return new ResponseEntity<>(playerList,HttpStatus.OK);
     }
 
     @GetMapping("/detail/{id}")
@@ -35,13 +35,13 @@ public class PlayerRestController {
         return new ResponseEntity<>(player, HttpStatus.OK);
     }
 
-    @PostMapping("")
+    @PostMapping("/add")
     public ResponseEntity<List<Player>> add(@RequestBody Player player) {
         playerService.save(player);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping("")
+    @PutMapping("/edit")
     public ResponseEntity<List<Player>> edit(@RequestBody Player player) {
         playerService.save(player);
         return new ResponseEntity<>(HttpStatus.OK);

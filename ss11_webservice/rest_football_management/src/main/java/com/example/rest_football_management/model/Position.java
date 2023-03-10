@@ -1,5 +1,7 @@
 package com.example.rest_football_management.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -10,6 +12,7 @@ public class Position {
     private int id;
     private String positionType;
     @OneToMany(mappedBy = "position")
+    @JsonBackReference
     Set<Player> playerSet;
 
     public Position() {
