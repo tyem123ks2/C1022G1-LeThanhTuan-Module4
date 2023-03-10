@@ -51,7 +51,6 @@ public class PlayerController {
         BeanUtils.copyProperties(player, playerDto);
         favoriteDto.addFavoritePlayer(playerDto);
 
-
         Cookie cookie = new Cookie("playerId", id + "");
         cookie.setMaxAge(1 * 24 * 60 * 60);
         cookie.setPath("/favorite");
