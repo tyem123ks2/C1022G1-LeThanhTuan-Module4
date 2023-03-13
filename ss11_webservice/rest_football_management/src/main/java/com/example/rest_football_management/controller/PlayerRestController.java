@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("*")
+@CrossOrigin("*") //CORS
 @RestController
-@RequestMapping("/player")
+@RequestMapping("/rest/player")
 public class PlayerRestController {
     @Autowired
     private IPlayerService playerService;
