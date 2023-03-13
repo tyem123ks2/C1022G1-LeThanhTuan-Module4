@@ -31,7 +31,7 @@ public class LogAOP {
             }
         }
 
-        System.out.println("Trạng thái của cầu thủ " + playerDto.getName() + " đã bị chuyển đổi thành " + playerDto.isStatus());
-        System.out.println("Số lượng cầu thủ đăng kí là: " + count);
+        System.out.println("Cầu thủ" + playerDto.getName() + "chuyển đổi thành " + playerDto.isStatus());
+        System.out.println("Số lượng đã đăng kí: " + count);
     }
 }
