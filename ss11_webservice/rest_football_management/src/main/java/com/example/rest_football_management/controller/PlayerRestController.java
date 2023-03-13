@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("*") //CORS
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/rest/player")
 public class PlayerRestController {
@@ -38,7 +38,7 @@ public class PlayerRestController {
     @PostMapping("/add")
     public ResponseEntity<List<Player>> add(@RequestBody Player player) {
         playerService.save(player);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PutMapping("/edit")

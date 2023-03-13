@@ -37,13 +37,13 @@ function add() {
         contentType: 'application/json;',
         dataType: 'json',
         type: 'POST',
-        url: "http://localhost:8080/rest/player",
+        url: "http://localhost:8080/rest/player/add",
         data: JSON.stringify(player),
         success: function (data) {
 
         },
         complete: function (data) {
-            console.log(data)
+            console.log(data) ;
             showList();
         }
     });
