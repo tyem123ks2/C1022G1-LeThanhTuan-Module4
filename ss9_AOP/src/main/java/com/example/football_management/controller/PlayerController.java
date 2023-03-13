@@ -8,6 +8,8 @@ import com.example.football_management.service.IPlayerService;
 import com.example.football_management.service.IPositionService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -30,7 +32,10 @@ public class PlayerController {
     private IPositionService positionService;
 
     @GetMapping("/show-list")
-    public String showAllPlayer(Model model) throws Exception {
+    public String showAllPlayer(Model model, @RequestParam(value = "searchName", defaultValue = "", required = false) String name,
+                                @RequestParam(value = "searchPositionId", defaultValue = "0") int positionId,
+                                @RequestParam(value = "searchNationId", defaultValue = "0") int nationId,
+                                @PageableDefault(size = 10) Pageable pageable) throws Exception {
         List<Player> playerList = playerService.getAllPlayer();
         if (playerList.size() > 11){
          throw new ExceptionHandle();
@@ -55,7 +60,6 @@ public class PlayerController {
 
     public String getUpdatePlayer(@ModelAttribute @Validated PlayerDto playerDto, BindingResult bindingResult,
                                   RedirectAttributes redirectAttributes, Model model){
-        new PlayerDto().validate(playerDto, bindingResult);
         if (bindingResult.hasErrors()){
             model.addAttribute("playerDto",playerDto);
             model.addAttribute("nationList", nationService.getAllNation());
@@ -69,8 +73,4 @@ public class PlayerController {
         return "redirect:/player/show-list";
     }
 
-    @ExceptionHandler(ExceptionHandle.class)
-    public String showException() {
-        return "/player/error";
-    }
 }

@@ -10,7 +10,7 @@
 
 <h3>Player List</h3>
 
-<p>Có <span th:text="${playerList.size()}"></span>MEN PLAYER</p>
+<p>Hiện tại có <span th:text="${playerList.size()}"></span>MEN PLAYER được đăng kí</p>
 
 <table class="table table-striped">
     <thead class="table align-middle table-secondary" align="center">
@@ -22,12 +22,13 @@
         <th scope="col">Position</th>
         <th scope="col">Experience</th>
         <th scope="col">Country</th>
+        <th scope="col">Status</th>
         <th scope="col">Edit</th>
         <th scope="col">Delete</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="player,stt : ${playerList.content}">
+    <tr th:each="player,stt : ${playerList}">
         <th align="center" scope="row" th:text="${stt.count + playerList.number*playerList.size}"></th>
         <td th:text="${player.name}"></td>
         <td th:text="${player.dateOfBirth}"></td>

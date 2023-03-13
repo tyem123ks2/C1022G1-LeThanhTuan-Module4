@@ -9,6 +9,8 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @Aspect
 public class LogAOP {
@@ -21,8 +23,9 @@ public class LogAOP {
 
     @After(value = "getAllUpdate(playerDto)", argNames = "playerDto")
     public void printUpdate(PlayerDto playerDto) {
+        List<Player> playerList = playerService.getAllPlayer();
         int count = 0;
-        for (Player player : playerService.getAllPlayer()) {
+        for (Player player : playerList) {
             if (player.isStatus() == true) {
                 count++;
             }
