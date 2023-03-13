@@ -2,11 +2,14 @@ package com.example.football_management.controller;
 
 import com.example.football_management.dto.PlayerDto;
 import com.example.football_management.exception.ExceptionHandle;
+import com.example.football_management.model.Nation;
 import com.example.football_management.model.Player;
+import com.example.football_management.model.Position;
 import com.example.football_management.service.INationService;
 import com.example.football_management.service.IPlayerService;
 import com.example.football_management.service.IPositionService;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.NamedBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -32,17 +35,16 @@ public class PlayerController {
     private IPositionService positionService;
 
     @GetMapping("/show-list")
-    public String showAllPlayer(Model model, @RequestParam(value = "searchName", defaultValue = "", required = false) String name,
-                                @RequestParam(value = "searchPositionId", defaultValue = "0") int positionId,
-                                @RequestParam(value = "searchNationId", defaultValue = "0") int nationId,
-                                @PageableDefault(size = 10) Pageable pageable) throws Exception {
+    public String showAllPlayer(Model model) throws Exception {
         List<Player> playerList = playerService.getAllPlayer();
+        List<Nation> nationList = nationService.getAllNation();
+        List<Position> positionList = positionService.getAllPosition();
         if (playerList.size() > 11){
          throw new ExceptionHandle();
         }
         model.addAttribute("playerList",playerList);
-        model.addAttribute("nationList", nationService.getAllNation());
-        model.addAttribute("positionList", positionService.getAllPosition());
+        model.addAttribute("nationList", nationList);
+        model.addAttribute("positionList", positionList);
         return "/player/list";
     }
 
@@ -50,20 +52,25 @@ public class PlayerController {
     public String getEditPlayer(@PathVariable int id, Model model){
         Player player = playerService.findById(id);
         PlayerDto playerDto = new PlayerDto();
+        List<Nation> nationList = nationService.getAllNation();
+        List<Position> positionList = positionService.getAllPosition();
         BeanUtils.copyProperties(player, playerDto);
-
         model.addAttribute("playerDto",playerDto);
-        model.addAttribute("nationList", nationService.getAllNation());
-        model.addAttribute("positionList", positionService.getAllPosition());
+        model.addAttribute("nationList", nationList);
+        model.addAttribute("positionList", positionList);;
         return "/player/edit";
     }
 
     public String getUpdatePlayer(@ModelAttribute @Validated PlayerDto playerDto, BindingResult bindingResult,
                                   RedirectAttributes redirectAttributes, Model model){
         if (bindingResult.hasErrors()){
+            List<Player> playerList = playerService.getAllPlayer();
+            List<Nation> nationList = nationService.getAllNation();
+            List<Position> positionList = positionService.getAllPosition();
             model.addAttribute("playerDto",playerDto);
-            model.addAttribute("nationList", nationService.getAllNation());
-            model.addAttribute("positionList", positionService.getAllPosition());
+            model.addAttribute("playerList",playerList);
+            model.addAttribute("nationList", nationList);
+            model.addAttribute("positionList", positionList);;
             return "/player/edit";
         }
         Player player = new Player();
