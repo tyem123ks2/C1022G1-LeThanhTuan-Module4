@@ -15,7 +15,7 @@ public class PlayerService implements IPlayerService {
     private IPlayerRepository iPlayerRepository;
 
     @Override
-    public List<Player> findAll() {
+    public List<Player> getAllPlayer() {
         return iPlayerRepository.findAll();
     }
 

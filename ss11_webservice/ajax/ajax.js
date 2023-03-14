@@ -40,7 +40,8 @@ function add() {
         url: "http://localhost:8080/rest/player/add",
         data: JSON.stringify(player),
         success: function (data) {
-
+            $('#modal').toggle();
+            $('#modal').hide();
         },
         complete: function (data) {
             console.log(data) ;

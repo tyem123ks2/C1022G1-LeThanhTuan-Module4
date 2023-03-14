@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IPlayerService {
-    List<Player> findAll();
+    List<Player> getAllPlayer();
 
     Optional<Player> findById(int id);
 }
+

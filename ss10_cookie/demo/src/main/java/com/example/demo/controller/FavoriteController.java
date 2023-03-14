@@ -1,15 +1,19 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.FavoriteDto;
+import com.example.demo.dto.PlayerDto;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
-import org.springframework.web.servlet.ModelAndView;
+import java.util.Map;
 
 @Controller
 public class FavoriteController {
     @GetMapping("/favorite")
-    public ModelAndView showFavorite(@SessionAttribute(name = "favorite") FavoriteDto favoriteDto) {
-        return new ModelAndView("favorite/list", "favorite", favoriteDto);
+    public String showFavorite(@SessionAttribute(name = "favorite") FavoriteDto favoriteDto, Model model) {
+        Map<PlayerDto, Integer> playerMap = favoriteDto.getPlayerMap();
+        model.addAttribute("playerMap", playerMap);
+        return "favorite";
     }
 }
