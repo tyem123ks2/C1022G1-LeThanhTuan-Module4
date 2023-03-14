@@ -5,6 +5,7 @@ import com.example.demo.dto.PlayerDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import java.util.Map;
 
@@ -14,6 +15,6 @@ public class FavoriteController {
     public String showFavorite(@SessionAttribute(name = "favorite") FavoriteDto favoriteDto, Model model) {
         Map<PlayerDto, Integer> playerMap = favoriteDto.getPlayerMap();
         model.addAttribute("playerMap", playerMap);
-        return "favorite";
+        return "/favorite/list";
     }
 }
