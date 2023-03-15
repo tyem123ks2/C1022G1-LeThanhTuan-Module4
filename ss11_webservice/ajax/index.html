@@ -7,34 +7,50 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+<!--ADD NEW PLAYER-->
 <div style="margin-left: 100px">
-    <form>
-        <input type="text" id="name" placeholder="Nhập tên">
-        <input type="text" id="dateOfBirth" placeholder="Nhập ngày sinh">
-        <input type="text" id="age" placeholder="Nhập tuổi">
-        <input type="text" id="experience" placeholder="Nhập số năm kinh nghiệm">
-        <button id="btn-save" type="button" onclick="add()">Save</button>
-    </form>
+    <button type="button" class="btn btn-light" data-bs-toggle="modal"
+            data-bs-target="#addPlayer">
+        <img src="https://img.icons8.com/offices/30/null/plus-2-math.png"/> ADD NEW PLAYER
+    </button>
 </div>
-<div class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+<!--MODAL THÊM MỚI-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" id="addPlayer"
+     aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h5 class="modal-title">ADD NEW PLAYER</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label"> Name </label>
+                        <input type="text" id="name" class="form-control" placeholder="Nhập tên cầu thủ">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"> Date Of Birth </label>
+                        <input type="text" id="dateOfBirth" class="form-control" placeholder="Nhập ngày sinh">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"> Age </label>
+                        <input type="text" id="age" class="form-control" placeholder="Nhập tuổi">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"> Experience </label>
+                        <input type="text" id="experience" class="form-control" placeholder="Nhập số năm kinh nghiệm">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-save" type="submit" onclick="add()">Save</button>
+                    <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
 <h2 style="margin-left: 100px">PLAYERS LIST</h2>
 <table class="table table-striped">
     <thead>
@@ -46,16 +62,16 @@
         <th>Experience</th>
     </tr>
     </thead>
-    <tbody id = "tbody">
-<!--    <tr>-->
-<!--        <td colspan="4">-->
-<!--            <div class="d-flex justify-content-center">-->
-<!--                <div class="spinner-border" role="status">-->
-<!--                    <span class="visually-hidden">loading...</span>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </td>-->
-<!--    </tr>-->
+    <tbody id="tbody">
+    <!--    <tr>-->
+    <!--        <td colspan="4">-->
+    <!--            <div class="d-flex justify-content-center">-->
+    <!--                <div class="spinner-border" role="status">-->
+    <!--                    <span class="visually-hidden">loading...</span>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </td>-->
+    <!--    </tr>-->
     </tbody>
 </table>
 
